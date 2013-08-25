@@ -1,0 +1,26 @@
+<p>You're looking at <%= @post.title %></p>
+<p>URL: <%= @post.url %></p>
+<p>Description: <%= @post.description %></p> 
+
+<p>
+
+  <%= render 'shared/errors', obj: @comment %>
+
+  <h5>Leave a Comment</h5>
+    <%= form_for [@post, @comment] do |f| %> <!-- Gets mapped to Comments Controller Create action -->
+      <%= f.text_area :body %>
+      <br/>
+      <%= f.submit "Create Comment", class: 'btn btn-primary'%>
+    <% end %>
+
+
+  <h5>Comments:</h5>
+  <ol>
+    <% @post.comments.each do |comment| %>
+      <li><%= comment.body %></li>
+    <% end %>
+  </ol>
+
+</p>
+
+
