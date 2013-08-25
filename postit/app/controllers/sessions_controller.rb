@@ -13,7 +13,7 @@ class SessionsController <ApplicationController
       flash[:notice] = "Welcome, you're logged in"
       redirect_to root_path
     else 
-      flash[:error] = "Sorry, something's srong with your username or password"
+      flash[:error] = "Sorry, something's wrong with your username or password"
       redirect_to login_path
     end
 
